@@ -21,4 +21,21 @@
                          new Phrase('Nothing is certain but death and taxes')];
        return phrases;
     }
+
+     /**
+    * Selects random phrase from phrases property
+    * @return {Object} Phrase object chosen to be used
+    */
+   getRandomPhrase() {
+        return this.phrases[Math.floor(Math.random() * this.phrases.length)];
+    }
+
+    /**
+    * Begins game by selecting a random phrase and displaying it to user
+    */
+    startGame() {
+        document.getElementById('overlay').style.display = 'none';
+        this.activePhrase.getRandomPhrase().addPhraseToDisplay;
+    };
+    
  }
