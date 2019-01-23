@@ -36,7 +36,11 @@
         let phraseLetters = this.phrase.split('');
         let matchLetters = phraseLetters.filter(letter => letter !== ' ');
         
-        console.log(matchLetters.includes(letter));  
+        if (matchLetters.includes(letter)) {
+            return true;
+        } else { 
+            return false;
+        } 
     }
 
 
