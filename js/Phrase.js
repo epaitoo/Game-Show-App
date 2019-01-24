@@ -43,6 +43,27 @@
         } 
     }
 
+     /**
+    * Displays passed letter on screen after a match is found
+    * @param (string) letter - Letter to display
+    */
+    showMatchedLetter(letter) {
+        const boardLetters = document.getElementsByClassName('letter');
 
+        for (let i = 0; i < boardLetters.length; i++) {
+            if (letter === boardLetters[i].textContent) {
+                boardLetters[i].className = 'show';
+            } 
+        }
+    }
 
 }
+
+
+
+
+
+
+
+
+

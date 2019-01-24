@@ -40,5 +40,59 @@
     };
 
    
+    /**
+    * Checks for winning move
+    * @return {boolean} True if game has been won, false if game wasn't
+    won
+    */
+   checkForWin() {
+
+    let phrasesLetters = this.phrases;
+    let matchLetters = phrasesLetters.filter(letter => letter !== ' ');
+
+    if (matchLetters.length == 0) {
+      return true;
+    } else {
+        return false;
+    }
+     
+  }
+
+    /**
+        * Increases the value of the missed property
+        * Removes a life from the scoreboard
+        * Checks if player has remaining lives and ends game if player is out
+        */
+        removeLife() {
+            const tries = document.getElementsByClassName('tries');
+
+        for (heart of tries) {
+            document.getElementsByClassName('tries').src = 'images/lostHeart.png'; //replaces the image src to `images/lostHeart.png`
+            this.missed += 1;
+        }
+
+        if (this.missed == 5) {
+                this.gameOver(gameWon == false);
+        }
+
+    }
+
+
+    /**
+    * Displays game over message
+    * @param {boolean} gameWon - Whether or not the user won the game
+    */
+   gameOver(gameWon) {
+
+    if (gameWon === true) {
+        document.getElementById('game-over-message').textContent = "You've Won!";
+        document.getElementById('overlay').className = 'win';
+    } else {
+        document.getElementById('game-over-message').textContent = "You've Lost!";
+        document.getElementById('overlay').className = 'lose';
+    }
+    return gameWon;
+}
+
     
- }
+}
