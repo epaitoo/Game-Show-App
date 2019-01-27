@@ -16,9 +16,9 @@
     createPhrases() {
         const phrases = [new Phrase('A safe pair of hands'),
                          new Phrase('Back to square one'),
-                         new Phrase('Do unto others as you would have them do to you'),
-                         new Phrase('Get off on the worng foot'),
-                         new Phrase('Nothing is certain but death and taxes')];
+                         new Phrase('Love of my life'),
+                         new Phrase('Get off the hook'),
+                         new Phrase('Time to act')];
        return phrases;
     }
 
@@ -45,54 +45,65 @@
     * @return {boolean} True if game has been won, false if game wasn't
     won
     */
-   checkForWin() {
+    checkForWin() {
 
-    let phrasesLetters = this.phrases;
-    let matchLetters = phrasesLetters.filter(letter => letter !== ' ');
+        const hiddenLetters = document.getElementsByClassName('hide').length;
 
-    if (matchLetters.length == 0) {
-      return true;
-    } else {
-        return false;
+        if (!hiddenLetters) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
-     
-  }
+
 
     /**
-        * Increases the value of the missed property
-        * Removes a life from the scoreboard
-        * Checks if player has remaining lives and ends game if player is out
-        */
+     * Increases the value of the missed property
+     * Removes a life from the scoreboard
+     * Checks if player has remaining lives and ends game if player is out
+     */
         removeLife() {
-            const tries = document.getElementsByClassName('tries');
-
-        for (heart of tries) {
-            document.getElementsByClassName('tries').src = 'images/lostHeart.png'; //replaces the image src to `images/lostHeart.png`
             this.missed += 1;
-        }
+            const img = document.querySelectorAll('img');
 
-        if (this.missed == 5) {
-                this.gameOver(gameWon == false);
+            for (let i = 0; i < img.length; i++) {
+                if (this.missed === 1) {
+                    img[0].src = 'images/lostHeart.png';
+                } else if (this.missed === 2) {
+                    img[1].src = 'images/lostHeart.png';
+                } else if (this.missed === 3) {
+                    img[2].src = 'images/lostHeart.png';
+                }  else if (this.missed === 4) {
+                    img[3].src = 'images/lostHeart.png';
+                } else if (this.missed === 5) {
+                    img[4].src = 'images/lostHeart.png';
+                    this.gameOver(false);
+                }   
+            }
         }
-
-    }
 
 
     /**
-    * Displays game over message
-    * @param {boolean} gameWon - Whether or not the user won the game
-    */
-   gameOver(gameWon) {
+     * Displays game over message
+     * @param {boolean} gameWon - Whether or not the user won the game
+     */
+    gameOver(gameWon) {
 
-    if (gameWon === true) {
-        document.getElementById('game-over-message').textContent = "You've Won!";
-        document.getElementById('overlay').className = 'win';
-    } else {
-        document.getElementById('game-over-message').textContent = "You've Lost!";
-        document.getElementById('overlay').className = 'lose';
-    }
-    return gameWon;
-}
-
+        const overlayClass =  document.querySelector('.start');
+        const gameOverMessage = document.getElementById('game-over-message');
     
+        if (this.missed <= 4) {
+            gameWon == true;
+            overlayClass.className = 'win';
+            gameOverMessage.textContent = 'Great job!';
+            document.getElementById('overlay').style.display = '';      
+        } else {
+            gameWon == false;
+            overlayClass.className ='lose';
+            gameOverMessage.textContent = 'Sorry, better luck next time';
+            document.getElementById('overlay').style.display = '';
+        }
+    }
+   
 }
