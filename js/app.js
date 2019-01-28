@@ -12,3 +12,7 @@ document.getElementById('btn__reset').addEventListener('click', function(){
     game = new Game();
     game.startGame();
 });
+
+document.getElementById('qwerty').addEventListener('click', function(e){
+    game.handleInteraction(e.target);
+});

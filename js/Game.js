@@ -90,20 +90,49 @@
      */
     gameOver(gameWon) {
 
-        const overlayClass =  document.querySelector('.start');
+        const overlayDiv =  document.getElementById('overlay');
         const gameOverMessage = document.getElementById('game-over-message');
     
         if (this.missed <= 4) {
             gameWon == true;
-            overlayClass.className = 'win';
+            overlayDiv.className = 'win';
             gameOverMessage.textContent = 'Great job!';
             document.getElementById('overlay').style.display = '';      
         } else {
             gameWon == false;
-            overlayClass.className ='lose';
+            overlayDiv.className ='lose';
             gameOverMessage.textContent = 'Sorry, better luck next time';
             document.getElementById('overlay').style.display = '';
         }
+    }
+
+
+     /**
+    * Handles onscreen keyboard button clicks
+    * @param (HTMLButtonElement) button - The clicked button element
+    */
+   handleInteraction(button) {
+        if (button.tagName == 'BUTTON') { //event only listen to `BUTTON` elements on click
+
+            let letter = button.textContent
+            button.disabled = true;
+            
+            if (!this.checkLetter(letter)) {
+                button.className = 'wrong';
+                this.removeLife();
+            } else {
+                button.className = 'chosen';
+                this.showMatchedLetter(letter);
+                this.checkForWin(); 
+                
+                if (this.gameWon(true)) {
+                    this.gameWon(true);
+                } else {
+                    this.gameWon(false);
+                }
+            }
+
+        } 
     }
    
 }
