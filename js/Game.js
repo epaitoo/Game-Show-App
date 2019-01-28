@@ -124,15 +124,13 @@
                 button.className = 'chosen';
                 this.showMatchedLetter(letter);
                 this.checkForWin(); 
-                
-                if (this.gameWon(true)) {
-                    this.gameWon(true);
-                } else {
-                    this.gameWon(false);
-                }
             }
 
-        } 
+        }
+        if (this.checkForWin() == true) { //check if the user has won
+            this.gameOver(true); //gamewon is equal to true
+        }  
     }
+
    
 }
