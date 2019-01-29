@@ -46,6 +46,13 @@ h1 {
   font-size: 30px;
 }
 
+#show-answer {
+  font-size: 25px;
+  margin-top: 5px;
+}
+
+
+
 button {
   margin: 6px;
   border: 1px solid transparent;
@@ -131,14 +138,14 @@ button {
 }
 
 .chosen {
-  background: #3a3f58;
+  background: #2aa12e;
   border-radius: 5px;
   font-size: var(--font-size-medium);
   color: #FFFFFF;
 }
 
 .wrong {
-  background: #f7a964;
+  background: #e64e62;
   color: #FFFFFF;
 }
 

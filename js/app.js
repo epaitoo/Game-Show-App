@@ -2,10 +2,7 @@
  * Project 4 - OOP Game App
  * app.js */
 
-
-/**
- * Event listener on the start button to start game on click
- */
+//Event listener to start game
 let game;
 
 document.getElementById('btn__reset').addEventListener('click', function(){
@@ -13,6 +10,9 @@ document.getElementById('btn__reset').addEventListener('click', function(){
     game.startGame();
 });
 
+
+
 document.getElementById('qwerty').addEventListener('click', function(e){
     game.handleInteraction(e.target);
 });
+
