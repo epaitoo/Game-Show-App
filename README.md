@@ -1,3 +1,5 @@
+# GAME SHOW APP
+
 This project focuses on ***OOP (Object Oriented Programming) in JavaScript.***
 
 In this project, I created a browser-based, word guessing game called ***"Phrase Hunter."*** 
