@@ -28,7 +28,7 @@ A player can guess a letter only once. After they’ve guessed a letter, it disa
 
 ## **Skills acquired**
 
--OBJECT ORIENTED PROGRAMMING(OOJS) IN JAVASCRIPT
+-OBJECT ORIENTED PROGRAMMING(OOP) IN JAVASCRIPT
 
 -DOM MANINPULATION
 
