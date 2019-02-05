@@ -28,6 +28,7 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
+  background: #FFDF00;
 }
 
 li, ol, ul {
@@ -106,7 +107,7 @@ button {
   padding: 20px 1px 0 1px;
   margin-right: 2px;
   color: transparent;
-  background: var(--color-neutral-light);
+  background: firebrick;
   border-radius: 5px;
 }
 
@@ -187,7 +188,7 @@ button {
 }
 
 .start {
-  background-color: #3a3f58;
+  background-color: #FFDF00;
 }
 
 .start a {
