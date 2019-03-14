@@ -51,7 +51,7 @@ A player can guess a letter only once. After they’ve guessed a letter, it disa
 
 These instructions will get you a copy of the project up and running on your local machine for development
 
-### Doenloading
+### Downloading
 
 Click on the 'Clone or download' button and select 'Download Zip.'
 
