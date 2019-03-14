@@ -47,4 +47,18 @@ A player can guess a letter only once. After they’ve guessed a letter, it disa
 * If all the letters in the phrase are shown, the “win” overlay is shown
 
 
+## Getting Started
 
+These instructions will get you a copy of the project up and running on your local machine for development
+
+### Doenloading
+
+Click on the 'Clone or download' button and select 'Download Zip.'
+
+### Installing
+
+Step 1: Unzip the zip file.
+
+Step 2: Open the folder in a text editor.
+
+Using a text editor, you can view/edit the code or preview the app in a browser.
