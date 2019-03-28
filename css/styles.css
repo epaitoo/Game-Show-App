@@ -70,7 +70,9 @@ button {
 
 #btn__reset {
 	width: 200px;
-	margin: 0 auto;
+  margin: 0 auto;
+  background-color: #1e90ff;
+  color: white
 }
 
 .main-container {
